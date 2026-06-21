@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://overlay-app.tech">
 
-    <link rel="icon" type="image/png" href="favicon2.png">
+    <link class="icon" type="image/png" href="favicon2.png">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@700&display=swap');
@@ -30,10 +30,12 @@
             color: #ffffff;
             font-family: 'DM Sans', sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Zmenené na stĺpec pre scrollovanie */
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 60px 20px; /* Väčší padding zhora/zdola pre pekné okraje pri scrollovaní */
+            gap: 24px; /* Čistá medzera medzi prvkami */
         }
 
         .card {
@@ -59,10 +61,17 @@
             border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
+        /* Nový modrý tag pre Clipboard App */
+        .badge.blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
         h1 {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 4px; /* Zmenšené z 12px, aby bol autor bližšie k nadpisu */
+            margin-bottom: 4px;
             letter-spacing: -0.02em;
         }
 
@@ -95,6 +104,17 @@
             box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
         }
 
+        /* Nové modré tlačidlo pre Clipboard App */
+        .download-btn.blue {
+            background: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .download-btn.blue:hover {
+            background: #1d4ed8;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
         .download-btn:active {
             transform: translateY(0);
         }
@@ -103,6 +123,16 @@
             font-size: 12px;
             color: #64748b;
             margin-top: 20px;
+        }
+
+        /* Štýl nápisu medzi kartami */
+        .scroll-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            margin: 10px 0;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -117,6 +147,28 @@
         <p>Display any video or image always on top of your screen. Perfect for tracing, watching videos while working, or gaming.</p>
         
         <a href="https://github.com/RibomX/overlay-app/releases/download/v1.0.1/OverlayApp.zip" class="download-btn" download>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download for Windows (.ZIP)
+        </a>
+
+        <div class="info-text">
+            After downloading, extract the ZIP archive and run the installer.
+        </div>
+    </div>
+
+    <div class="scroll-text">
+        ↓ NEW APP FROM RIBOM DEV ↓
+    </div>
+
+    <div class="card">
+        <span class="badge blue">BETA RELEASE</span>
+        <h1>Clipboard App</h1>
+        
+        <div style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 24px; opacity: 0.7;">by RibomDev</div>
+        
+        <p>Manage and access your clipboard history instantly. Keep track of copied texts, links, and code snippets securely with advanced tools.</p>
+        
+        <a href="#" class="download-btn blue" download>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Download for Windows (.ZIP)
         </a>
